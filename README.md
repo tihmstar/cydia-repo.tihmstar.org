@@ -7,8 +7,8 @@ and download the tool via Cydia or apt.
 
 #################
 NOTE: this content is a demo and is NOT available on my cydia repo
-	im using fuzzycactus files for demostration, but you won't get a working tool
-	by cloning this repo.
+	im using some fuzzycactus files for demostration, but you won't get a working tool
+	by cloning this repo, since the main files are missing.
 
 
 This is a cydia pre-repo demo.
