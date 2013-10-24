@@ -1,0 +1,18 @@
+Package: com.compilingentropy.fuzzycactus
+Name: Fuzzycactus
+Version: 0.1.0.3
+Description: Automated fuzzing MobileSafari
+    a tool to fuzz mov files and attack mobile safari
+Section: cmd-tool
+Depends: firmware (>= 6.0),com.innoying.sbutils,bc,lighttpd,adv-cmds,com.cameronfarzaneh.safariresetter,curl,wget,coreutils
+Conflicts: 
+Replaces: 
+Priority: optional
+Architecture: iphoneos-arm
+Author: compilingEntropy
+dev: compilingEntropy
+Homepage: 
+Depiction: 
+Maintainer: 
+Icon: 
+

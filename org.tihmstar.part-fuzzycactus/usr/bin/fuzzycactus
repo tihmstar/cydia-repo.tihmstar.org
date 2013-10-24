@@ -1,0 +1,54 @@
+#!/bin/bash
+file=$2
+param=$1
+if ([ -z $param ]); then
+        echo "You must provide an action."
+        echo "Usage: fuzzycactus [start/stop/help] ./file.mov"
+        exit
+fi
+
+if ([ -z $file ] && [ "$param" != "stop" ] && [ "$param" != "help" ]); then
+        echo "You must provide an action and a file to fuzz"
+        echo "Usage: fuzzycactus [start/stop/help] ./file.mov"
+        exit
+fi
+
+if ([ "$param" != "start" ] && [ "$param" != "help" ] && [ "$param" != "stop" ]); then
+        echo "Wrong action! allowed actions: \"start\" or \"stop\" or \"help\""
+	echo "You must provide a file to fuzz"
+	echo "Usage: fuzzycactus [start/stop/help] ./file.mov"
+        exit
+fi
+
+if ([ "$param" = "help" ]);then
+	echo "You must provide a file to fuzz"
+	echo "Usage: fuzzycactus [start/stop/help] ./file.mov"
+	echo ""
+	echo "\"fuzzycactus start ./file.mov\" starts fuzzing ./file.mov"
+	echo "   once started you can savely Ctrl-C and disconnect"
+	echo "\"fuzzycactus stop\" stops the fuzzing daemon"
+	echo "\"fuzzycactus help\" displays this help message"
+	echo ""
+	echo "fuzzycactus is installed to /var/fuzzycactus/ so you can cd there and use tools like crashclean.sh"
+	echo "your crashes are in /var/fuzzycactus/Results"
+	echo "if you had a kernelpanic you should cd to /var/fuzzycactus and run crashclean.sh"	
+fi
+
+
+if ([ "$param" = "start" ]);then
+	path=$(pwd)
+	if ([ ${file:0:1} = "." ]);then
+		file=$path/${file:2}
+	elif ([ ${file:0:1} = "/" ]);then
+		file=$file
+	else
+		file=$path/$file
+	fi
+	cd /var/fuzzycactus/
+	./start.sh $file
+fi
+
+if ([ "$param" = "stop" ]);then
+	cd /var/fuzzycactus/
+        ./stop.sh
+fi
