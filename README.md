@@ -5,17 +5,12 @@ This repo is not meant to be clone by regular user.
 If you want to get it's content you should add "repo.tihmstar.org"
 and download the tool via Cydia or apt.
 
-#################
-NOTE: this content is a demo and is NOT available on my cydia repo
-	im using some fuzzycactus files for demostration, but you won't get a working tool
-	by cloning this repo, since the main files are missing.
-
-
-This is a cydia pre-repo demo.
+This is a cydia undeb-repo.
 If you want to maintain your package hosted on my repo, 
-you need to (ask me of course first and then) make such a pre-repo on your git. 
+you need to (ask me of course first and then) make such a undeb-repo on your git. 
 There you can push your changes and my daemon will clone your git repo, 
 build a deb and push to my Cydia repo.
+
 
 You need to create a new repo in your git which must be named "cydia-repo.tihmstar.org"
 In the README.md i advise you to copy the first part from this file.
